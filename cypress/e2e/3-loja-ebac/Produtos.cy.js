@@ -13,18 +13,22 @@ describe('Funcionalidade: Produtos', () => {
 
     });
 
-    it.only('Deve buscar um produto com sucesso', () => {
+    it('Deve buscar um produto com sucesso', () => {
         let produto = 'Aether Gym Pant'
         produtosPage.buscarProduto(produto)
         cy.get('.product_title').should('contain', produto)
     });
 
     it('Deve visitar a página do produto', () => {
-
-
+        produtosPage.visitarProduto('sparta gym tank')
+        cy.get('.product.title').should('contain','sparta gym tank')
     });
 
-    it('Deve adicionar produto ao carrinho', () => {
+    it.only('Deve adicionar produto ao carrinho', () => {
+        produtosPage.buscarProduto('Aero Daily Fitness Tee')
+        produtosPage.addProdutoCarrinho()
+
+        cy.get('.woocommerce-message').should('contain','2 × “Aero Daily Fitness Tee” foram adicionados no seu carrinho.')
 
     });
 });
