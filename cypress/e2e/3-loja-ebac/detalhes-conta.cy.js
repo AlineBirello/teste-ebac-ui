@@ -4,12 +4,16 @@ describe('Funcionalidade: detalhes da conta', () => {
 
     beforeEach(() => {
         cy.visit('minha-conta/edit-account')
-        cy.login('birello.teste@teste.com.br', 'teste123')
+        cy.fixture('perfil').then(login => {
+            cy.login(login.usuario, login.senha)
+        })
+        
 
     });
 
     it('Deve completar detalhes da conta com sucesso', () => {
         cy.detalhesConta('teste', 'Birello', 'birello.qa')
+        cy.get('.woocommerce-message').should('contain' , 'Detalhes da conta modificados com sucesso.')
     });
 
 });
