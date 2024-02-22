@@ -1,6 +1,20 @@
 [
     {
         "nomeProduto": "Ingrid Running Jacket",
-        "tamanho":
+        "tamanho":"XS",
+        "cor":"Red",
+        "Quantidade": 2
+    },
+    {
+        "nomeProduto": "Augusta Pullover Jacket",
+        "tamanho":"XS",
+        "cor":"Orange",
+        "Quantidade": 3
+    },
+    {
+        "nomeProduto": "Rocco Gym Tank",
+        "tamanho":"m",
+        "cor":"Blue",
+        "Quantidade": 5
     }
 ]
